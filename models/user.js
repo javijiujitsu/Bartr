@@ -24,18 +24,24 @@ facebookID: {
 type: String
 
 },
+
+googleID: {
+      type: String
+    },
+
 service: {
   type: String
 },
 good: {
   type: String
+}
 },
 
-googleID: {
-type: String
-}
+{
+    timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+  }
 
-});
+);
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

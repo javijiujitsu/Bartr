@@ -3,8 +3,9 @@ const Schema   = mongoose.Schema;
 
 const exchangeSchema = new Schema({
 
-  exchangers: {
-  type: String  // Change this to Object ID Type
+  exchangersuserid: {           
+  type: Schema.Types.ObjectId,
+   ref: "User" // Change this to Object ID Type
 },
   dateofexchange: {
   type: Date

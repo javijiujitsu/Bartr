@@ -14,6 +14,7 @@ const User          = require('./models/user');
 const Excahnge      = require('./models/exchange');
 const Review        = require('./models/review');
 const passport      = require('passport');
+const FbStrategy = require('passport-facebook').Strategy;
 
 mongoose.connect('mongodb://localhost/bartr');
 
@@ -55,6 +56,35 @@ passport.deserializeUser((id, cb) => {
     cb(null, user);
   });
 });
+
+//Facebook Login OAuth
+passport.use(new FbStrategy({
+  clientID: "181773632383620",
+  clientSecret: "4a053f2b160f933e727ba72539c770e4",
+  callbackURL: "/auth/facebook/callback"
+}, (accessToken, refreshToken, profile, done) => {
+  User.findOne({ facebookID: profile.id }, (err, user) => {
+    if (err) {
+      return done(err);
+    }
+    if (user) {
+      return done(null, user);
+    }
+
+    const newUser = new User({
+      facebookID: profile.id
+    });
+
+    newUser.save((err) => {
+      if (err) {
+        return done(err);
+      }
+      done(null, newUser);
+    });
+  });
+
+}));
+
 
 // Signing Up
 passport.use('local-signup', new LocalStrategy(
