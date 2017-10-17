@@ -25,13 +25,10 @@ type: String
 
 },
 
-googleID: {
-      type: String
-    },
-
 service: {
   type: String
 },
+
 good: {
   type: String
 }
