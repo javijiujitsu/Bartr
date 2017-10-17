@@ -16,6 +16,7 @@ const Review        = require('./models/review');
 const passport      = require('passport');
 const FbStrategy = require('passport-facebook').Strategy;
 
+
 mongoose.connect('mongodb://localhost/bartr');
 
 const app = express();
@@ -148,6 +149,17 @@ app.use(passport.session());
 
 const authRoutes = require('./routes/authentication');
 app.use('/', authRoutes);
+
+const aboutRoutes = require('./routes/about');
+app.use('/', aboutRoutes);
+
+const profileRoutes = require('./routes/profile');
+app.use('/', profileRoutes);
+
+const exploreRoutes = require('./routes/explore');
+app.use('/', exploreRoutes);
+
+
 
 const index = require('./routes/index');
 app.use('/', index);
