@@ -14,7 +14,8 @@ const User          = require('./models/user');
 const Excahnge      = require('./models/exchange');
 const Review        = require('./models/review');
 const passport      = require('passport');
-const FbStrategy = require('passport-facebook').Strategy;
+const FbStrategy    = require('passport-facebook').Strategy;
+const moment        = require('moment');
 
 
 mongoose.connect('mongodb://localhost/bartr');

@@ -4,29 +4,45 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
 
   email: {
-  type: String
+  type: String, required: true
 },
   username: {
-  type: String
+  type: String, required: true
 },
 password : {
-type: String
+type: String, required: true
 },
 
 description: {
-type: String
+type: String, requred: true
 },
 
 profession: {
   type: String
 },
-facebookID: {
+
+company: {
 type: String
 
 },
 
+facebookID: {
+type: String
+
+},
+firstname: {
+  type: String
+},
+
+lastname: {
+  type: String
+},
+
 service: {
   type: String
+},
+_creator: {
+  type:Schema.Types.ObjectId, ref: 'User'
 },
 
 good: {
