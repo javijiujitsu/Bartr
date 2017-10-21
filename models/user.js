@@ -38,6 +38,10 @@ lastname: {
   type: String
 },
 
+pic_path: {
+  type: String
+},
+
 service: {
   type: String
 },

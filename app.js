@@ -23,6 +23,8 @@ mongoose.connect('mongodb://localhost/bartr');
 
 const app = express();
 
+const upload = multer({ dest: './public/uploads/' });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -146,6 +148,13 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req,res, next) => {
+  if (req.user) {
+    res.locals.user = req.user;
+  }
+  next();
+})
 
 //Routes
 
