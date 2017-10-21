@@ -160,7 +160,8 @@ app.use('/', profileRoutes);
 const exploreRoutes = require('./routes/explore');
 app.use('/', exploreRoutes);
 
-
+const exchangeRoutes = require('./routes/exchange');
+app.use('/', exchangeRoutes);
 
 const index = require('./routes/index');
 app.use('/', index);
