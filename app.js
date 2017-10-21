@@ -16,6 +16,7 @@ const Review        = require('./models/review');
 const passport      = require('passport');
 const FbStrategy    = require('passport-facebook').Strategy;
 const moment        = require('moment');
+const multer        = require('multer');
 
 
 mongoose.connect('mongodb://localhost/bartr');
