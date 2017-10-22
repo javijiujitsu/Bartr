@@ -1,2 +1,19 @@
 <h1>Explore</h1>
 <p>Connect and Bartr with people around you and see all your exchanges</p>
+
+<div>
+<h3> All My Exchanges </h3>
+<% exchange.forEach((exchange) => { %>
+  <div>
+      
+      <div>
+      <a class="title" href="/exchange/<%= exchange._exchangeuserid %>">
+        <strong><%= exchange.description %></strong>
+      </a><br>
+      <span><%= exchange.dateofexchange %></span><br>
+      <span><%= exchange.typeofexchange %></span>
+      <span><%= exchange.condition %></span>
+    </div>
+  </div>
+  <% }) %>
+</div>

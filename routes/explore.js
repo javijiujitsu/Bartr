@@ -10,7 +10,7 @@ Exchange
     .find({})
     .populate('_exchangeuserid')
     .exec((err, exchange) => {
-     res.render('explore', {exchange });
+     res.render('explore', { exchange });
 });
 });
 
