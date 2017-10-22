@@ -28,10 +28,11 @@ router.post('/exchange/new', ensureLoggedIn('/login'), (req, res, next) => {
 
 
 newExchange.save( (err) => {
+  console.log("ERROR HERE : ", err);
   if (err) {
     res.render('exchanges/add_exchange');
   } else {
-    res.redirect('explore');
+    res.redirect('/explore');
   }
 });
 });

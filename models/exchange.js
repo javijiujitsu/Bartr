@@ -13,7 +13,7 @@ const exchangeSchema = new Schema({
 },
   typeofexchange:  {
   type: String,
-  enum: ["good", "exchange", "mixed"]
+  enum: ["good", "service", "mixed"]
 },
 acceptexchange: {
   type: Boolean,
