@@ -1,9 +1,8 @@
 
 
 <div class="container">
-
-    <form class="form-horizontal">
 <fieldset>
+  <form class="form-horizontal" action="/exchange/new" method="post">
 
 <!-- Form Name -->
 <h1>Let's create an exchange</h1>
@@ -12,41 +11,32 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-dark">add</button>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">product or service name</label>
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
-
+    <button id="singlebutton" type="submit" name="singlebutton" class="btn btn-dark">add</button>
   </div>
 </div>
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textarea">description</label>
+  <label class="col-md-4 control-label" for="description">description</label>
   <div class="col-md-4">
-    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+    <textarea class="form-control" id="description" name="description"></textarea>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">date of exchange</label>
+  <label class="col-md-4 control-label" for="dateofexchange">date of exchange</label>
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+  <input id="dateofexchange" name="dateofexchange" type="date" placeholder="" class="form-control input-md">
 
   </div>
 </div>
 
 <!-- Select The Type of Exchange -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">type of exchange</label>
+  <label class="col-md-4 control-label" for="typeofexchange">type of exchange</label>
   <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
+    <select id="typeofexchange" name="typeofexchange" class="form-control">
       <option value="1">good</option>
       <option value="2">service</option>
       <option value="2">mixed</option>
@@ -65,13 +55,10 @@
 
 <!-- Textarea Condition -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">condition</label>
+  <label class="col-md-4 control-label" for="condition">condition</label>
   <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">used</option>
-      <option value="2">good</option>
-      <option value="3">flawless</option>
-    </select>
+  <input id="condition" name="condition" type="text" placeholder="" class="form-control input-md">
+
   </div>
 </div>
 

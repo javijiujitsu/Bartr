@@ -13,10 +13,6 @@ password : {
 type: String, required: true
 },
 
-description: {
-type: String, requred: true
-},
-
 profession: {
   type: String
 },
@@ -44,9 +40,6 @@ pic_path: {
 
 service: {
   type: String
-},
-_creator: {
-  type:Schema.Types.ObjectId, ref: 'User'
 },
 
 good: {

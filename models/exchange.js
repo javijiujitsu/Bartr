@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const User    = require('./user');
 const Schema   = mongoose.Schema;
 
 const exchangeSchema = new Schema({
 
-  exchangersuserid: {           
+  _exchangeuserid: {
   type: Schema.Types.ObjectId,
    ref: "User" // Change this to Object ID Type
 },
@@ -16,6 +17,16 @@ const exchangeSchema = new Schema({
 },
 acceptexchange: {
   type: Boolean,
+},
+
+description: {
+type: String
+
+},
+
+condition: {
+type: String
+
 }
 
 });
