@@ -10,12 +10,14 @@ const upload = multer({ dest: './public/uploads/' });
 
 /* GET home page. */
 router.get('/exchange', (req, res, next) => {
-  res.render('exchanges/add_exchange');
+  Exchange.find((err, pictures) => {
+  res.render('exchanges/add_exchange', {pictures})
+})
 });
 
 // POST
 
-router.post('/exchange/new', ensureLoggedIn('/login'), (req, res, next) => {
+router.post('/exchange/new', ensureLoggedIn('/login'), upload.single('photo'), (req, res, next) => {
 
   const newExchange = new Exchange ({
 
@@ -23,7 +25,8 @@ router.post('/exchange/new', ensureLoggedIn('/login'), (req, res, next) => {
     dateofexchange: req.body.dateofexchange,
     typeofexchange: req.body.typeofexchange,
     condition: req.body.condition,
-    _exchangeuserid: req.user._id
+    _exchangeuserid: req.user._id,
+    pic_path: req.file.filename
     // We're assuming a user is logged in here
     // If they aren't, this will throw an error
 });

@@ -24,12 +24,23 @@ type: String
 
 },
 
+pic_path: {
+  type: String
+},
+
 condition: {
 type: String
+},
 
-}
+},
 
-});
+{
+    timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+  }
+
+
+
+);
 
 const Exchange = mongoose.model('Exchange', exchangeSchema);
 
