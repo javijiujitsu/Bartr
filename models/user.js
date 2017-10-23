@@ -6,6 +6,10 @@ const userSchema = new Schema({
   email: {
   type: String, required: true
 },
+userid: {
+type: Schema.Types.ObjectId,
+ ref: "User" // Change this to Object ID Type
+},
   username: {
   type: String, required: true
 },

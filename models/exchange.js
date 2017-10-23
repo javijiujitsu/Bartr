@@ -4,9 +4,7 @@ const Schema   = mongoose.Schema;
 
 const exchangeSchema = new Schema({
 
-  _exchangeuserid: {
-  type: Schema.Types.ObjectId,
-   ref: "User" // Change this to Object ID Type
+  _exchangeuserid: { type: Schema.Types.ObjectId, ref: "User" // Change this to Object ID Type
 },
   dateofexchange: {
   type: Date
@@ -41,6 +39,12 @@ type: String
 
 
 );
+
+exchangeSchema.virtual('inputFormattedDate').get(function(){
+  return moment(this.dateofexchange).format('YYYY-MM-DD');
+});
+
+
 
 const Exchange = mongoose.model('Exchange', exchangeSchema);
 
