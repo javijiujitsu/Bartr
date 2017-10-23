@@ -4,6 +4,8 @@ const Exchange = require('../models/exchange');
 const router  = express.Router();
 const moment = require('moment');
 const { ensureLoggedIn }  = require('connect-ensure-login');
+const multer  = require('multer');
+const upload = multer({ dest: './public/uploads/' });
 
 
 /* GET home page. */

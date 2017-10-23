@@ -3,6 +3,8 @@ const User    = require('../models/user');
 const Exchange = require('../models/exchange');
 const router  = express.Router();
 
+
+
 /* GET home page. */
 router.get('/explore', (req, res, next) => {
 
