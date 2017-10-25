@@ -18,6 +18,7 @@ const FbStrategy    = require('passport-facebook').Strategy;
 const moment        = require('moment');
 const multer        = require('multer');
 
+require('dotenv').config()
 
 mongoose.connect('mongodb://localhost/bartr');
 
