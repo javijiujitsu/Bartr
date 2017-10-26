@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -20,8 +20,8 @@ const moment        = require('moment');
 const multer        = require('multer');
 
 
-
-mongoose.connect('mongodb://localhost/bartr');
+require("dotenv").config();
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
