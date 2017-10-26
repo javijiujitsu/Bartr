@@ -1,0 +1,88 @@
+
+<h1>Let's Edit Our Exchanges </h1>
+<p>Edit All of Your Exchanges</p>
+
+
+
+<div class="container">
+<fieldset>
+  <form class="form-horizontal" action="/exchange/<%= exchange._id %>" method="post" enctype="multipart/form-data">
+
+<!-- Form Name -->
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" type="submit" name="singlebutton" class="btn btn-dark">Edit</button>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="description">description</label>
+  <div class="col-md-4">
+    <textarea class="form-control" id="description" name="description" value="<%= exchange.description %>"></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="dateofexchange">date of exchange</label>
+  <div class="col-md-4">
+  <input id="dateofexchange" name="dateofexchange" type="date" placeholder="" class="form-control input-md" value="<%= exchange.dateofexchange %>">
+
+  </div>
+</div>
+
+<!-- Select The Type of Exchange -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="typeofexchange">type of exchange</label>
+  <div class="col-md-4">
+    <select id="typeofexchange" name="typeofexchange" class="form-group">
+     <% typeofexchange=["good", "service", "mixed"] %>
+      <%  typeofexchange.forEach((currentexchange) => { %>
+               <!-- This selects the exchange's typeofexchange in the dropdown -->
+                 <%   if (currentexchange === exchange.typeofexchange) { %>
+                   <option
+                     selected
+                     type="text"
+                     value="<%= typeofexchange %>"
+                     class="form-control">
+                   <%=  currentexchange %>
+                   </option>
+                 <%  } else { %>
+                   <option type="text" value="<%= currentexchange %>" class="form-control"><%= currentexchange %></option>
+                 <% } %>
+               <%  }) %>
+              </select>
+            </div>
+          </div>
+
+<!--  Image File Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="photo">Upload Image</label>
+
+  <div class="col-md-4">
+    <input id="photo" name="photo" class="input-file" type="file" value="<% exchange.pic_path %>">
+  </div>
+</div>
+
+
+<!-- Textarea Condition -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="condition">condition</label>
+  <div class="col-md-4">
+  <input id="condition" name="condition" type="text" placeholder="" class="form-control input-md" value="<%= exchange.condition %>">
+
+  </div>
+</div>
+
+
+
+
+</fieldset>
+</form>
+
+
+</div>

@@ -42,8 +42,40 @@ newExchange.save( (err) => {
 });
 });
 
+router.get('/:id/edit', ensureLoggedIn('/login'), upload.single('photo'), (req, res, next) => {
+  Exchange.findById(req.params.id, (err, exchange) => {
+    if (err)       { return next(err) }
+    if (!exchange) { return next(new Error("404")) }
+    return res.render('exchanges/edit_exchange', { exchange })
+  });
+});
 
+router.post('/exchange/:id', ensureLoggedIn('/login'), upload.single('photo'),(req, res, next) => {
+  const updateexchange = {
 
+    description: req.body.description,
+    dateofexchange: req.body.dateofexchange,
+    typeofexchange: req.body.typeofexchange,
+    condition: req.body.condition,
+    _exchangeuserid: req.user._id,
+    pic_path: req.file.filename
+  };
+console.log("before update");
+  Exchange.findByIdAndUpdate(req.params.id, updateexchange, (err, exchange) => {
+    if (err) {
+      console.log("After the update one");
+      return res.render('exchanges/edit_exchange', {
+        exchange,
+        errors: exchange.errors
+      });
+    }
+    console.log("AFTER AFTER");
+    if (!exchange) {
+      return next(new Error('404'));
+    }
+    return res.redirect(`/explore`);
+  });
+});
 
 
 

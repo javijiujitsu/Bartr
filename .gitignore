@@ -1,5 +1,9 @@
+#env file
+
+
 # Logs
 logs
+.env
 *.log
 
 # Runtime data

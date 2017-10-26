@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -18,7 +19,7 @@ const FbStrategy    = require('passport-facebook').Strategy;
 const moment        = require('moment');
 const multer        = require('multer');
 
-require('dotenv').config()
+
 
 mongoose.connect('mongodb://localhost/bartr');
 
