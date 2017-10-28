@@ -85,7 +85,7 @@ console.log("before update");
 
 // EDIT POST
 
-router.post('/exchange/:id/delete', (req, res, next) => {
+router.post('/exchange/:id/delete',authorizeExchange, checkOwnership, (req, res, next) => {
   const id = req.params.id;
 
   Exchange.findByIdAndRemove(id, (err, exchange) => {
