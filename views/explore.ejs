@@ -19,10 +19,11 @@
 <h3>Description: <%= exchange.description %></h3>
   <img src="/uploads/<%= exchange.pic_path %>" class="img-fluid" alt="Responsive image">
 <br>
-<% if (typeof user !== 'undefined') { %>
+<% if (typeof user == 'undefined') { %>
 <a class="btn btn-dark" href="/<%=exchange._id%>/edit">Edit</a>
 <% } %>
-<% if (typeof user !== 'undefined') { %>
+
+<% if (typeof user == 'undefined') { %>
 <form action="/exchange/<%= exchange._id %>/delete" method="POST">
 <button type="submit" class="btn btn-dark">Delete</button>
 </form>
