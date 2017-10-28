@@ -163,8 +163,6 @@ app.use((req,res, next) => {
 const authRoutes = require('./routes/authentication');
 app.use('/', authRoutes);
 
-const aboutRoutes = require('./routes/about');
-app.use('/', aboutRoutes);
 
 const profileRoutes = require('./routes/profile');
 app.use('/', profileRoutes);

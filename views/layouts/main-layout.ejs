@@ -20,9 +20,8 @@
       </li>
       <li class="nav-item active">
 <% if (typeof user !== 'undefined') { %>
-        <form action="/logout" method="POST">
-          <button class="btn btn-link btn-logout nav-item active" class="nav-item active" type="submit">Logout</a>
-        </form>
+        <a href="/logout" class="nav-link">Logout</a>
+
          <% } %>
       </li>
     </ul>
@@ -41,7 +40,7 @@
       <li class="nav-item active">
       <% if (typeof user !== 'undefined') { %>
         <a class="nav-link" href="/profile">Profile</a>
-      <% } %>  
+      <% } %>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
