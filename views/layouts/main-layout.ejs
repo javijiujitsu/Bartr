@@ -19,20 +19,29 @@
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item active">
+<% if (typeof user !== 'undefined') { %>
         <form action="/logout" method="POST">
           <button class="btn btn-link btn-logout nav-item active" class="nav-item active" type="submit">Logout</a>
         </form>
+         <% } %>
       </li>
     </ul>
     <ul class="navbar-nav">
+
+  <% if (typeof user == 'undefined') { %>
       <li class="nav-item active">
         <a class="nav-link" href="/login">Login</a>
+   <% } %>
       </li>
       <li class="nav-item active">
+ <% if (typeof user == 'undefined') { %>
         <a class="nav-link" href="/signup">Signup</a>
+<% } %>
       </li>
       <li class="nav-item active">
+      <% if (typeof user !== 'undefined') { %>
         <a class="nav-link" href="/profile">Profile</a>
+      <% } %>  
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
