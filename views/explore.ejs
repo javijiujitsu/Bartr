@@ -12,6 +12,11 @@
         <strong><%= exchange.description %></strong>
       </a><br>
       <a class="nav-link" href="/<%=exchange._id%>/edit">Edit</a>
+
+    <form action="/exchange/<%= exchange._id %>/delete" method="POST">
+    <button type="submit" class="btn btn-dark">Delete Product</button>
+  </form>
+
       <span><%= exchange.dateofexchange %></span><br>
       <span><%= exchange.typeofexchange %></span>
       <span><%= exchange.condition %></span>

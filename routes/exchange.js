@@ -83,7 +83,17 @@ console.log("before update");
   });
 });
 
+// EDIT POST
 
+router.post('/exchange/:id/delete', (req, res, next) => {
+  const id = req.params.id;
+
+  Exchange.findByIdAndRemove(id, (err, exchange) => {
+    if (err){ return next(err); }
+    return res.redirect('/explore');
+  });
+
+});
 
 
 
