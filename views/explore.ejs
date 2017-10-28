@@ -1,26 +1,44 @@
+<% if (typeof user == 'undefined') { %>
 <h1>Explore</h1>
 <p>Connect and Bartr with people around you and see all your exchanges</p>
-
-<div>
-<h3> All My Exchanges </h3>
-<% exchange.forEach((exchange) => { %>
-  <div>
-
-      <div>
-      <a class="title" href="/exchange/<%= exchange._exchangeuserid %>">
-        <img src="/uploads/<%= exchange.pic_path %>" class="exchange-pic">
-        <strong><%= exchange.description %></strong>
-      </a><br>
-      <a class="nav-link" href="/<%=exchange._id%>/edit">Edit</a>
-
-    <form action="/exchange/<%= exchange._id %>/delete" method="POST">
-    <button type="submit" class="btn btn-dark">Delete Product</button>
-  </form>
-
-      <span><%= exchange.dateofexchange %></span><br>
-      <span><%= exchange.typeofexchange %></span>
-      <span><%= exchange.condition %></span>
-    </div>
-  </div>
-  <% }) %>
+<% } %>
+<div class="container">
+  <div class"row">
+  <% if (typeof user !== 'undefined') { %>
+<h1 class="all-my-exchanges">All My Exchanges </h1>
+<% } %>
 </div>
+</div>
+
+<!-- <div class="container"> -->
+<% exchange.forEach((exchange) => { %>
+
+<div class="row">
+<div class="col-sm-4 col-md-6 col-lg-12">
+<!-- <div class="col-sm-6 col-md-4"> -->
+<h3>Description: <%= exchange.description %></h3>
+  <img src="/uploads/<%= exchange.pic_path %>" class="img-fluid" alt="Responsive image">
+<br>
+<% if (typeof user !== 'undefined') { %>
+<a class="btn btn-dark" href="/<%=exchange._id%>/edit">Edit</a>
+<% } %>
+<% if (typeof user !== 'undefined') { %>
+<form action="/exchange/<%= exchange._id %>/delete" method="POST">
+<button type="submit" class="btn btn-dark">Delete</button>
+</form>
+<% } %>
+<span>Date of exchange: <%= exchange.dateofexchange %></span><br>
+<span>Type of exchange: <%= exchange.typeofexchange %></span> <br>
+<span>Condition: <%= exchange.condition %></span>
+<!-- </div> -->
+</div>
+</div>
+
+
+
+
+
+
+  <% }) %>
+
+<!-- </div> -->

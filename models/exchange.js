@@ -7,7 +7,7 @@ const exchangeSchema = new Schema({
   _exchangeuserid: { type: Schema.Types.ObjectId, ref: "User" // Change this to Object ID Type
 },
   dateofexchange: {
-  type: Date
+  type: Date, default: new Date()
 },
   typeofexchange:  {
   type: String,

@@ -9,17 +9,28 @@
   max-height: 100px;
 }
 
-.profile-pic {
+
+
+.img-fluid {
   height: auto;
   width: auto;
   max-height: 200px;
   max-height: 200px;
+
 }
 
-.exchange-pic {
-  height: auto;
-  width: auto;
-  max-height: 200px;
-  max-height: 200px;
+.btn-product{
+	width: 100%;
+}
+
+.all-my-exchanges {
+  word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+     padding-top: 10px;
+     margin-bottom: 50px;
 
 }
