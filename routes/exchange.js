@@ -7,6 +7,11 @@ const { ensureLoggedIn }  = require('connect-ensure-login');
 const multer  = require('multer');
 const upload = multer({ dest: './public/uploads/' });
 
+const {
+  authorizeExchange,
+  checkOwnership
+} = require('../middleware/exchange-authorization');
+
 
 /* GET home page. */
 router.get('/exchange', (req, res, next) => {
@@ -42,7 +47,8 @@ newExchange.save( (err) => {
 });
 });
 
-router.get('/:id/edit', ensureLoggedIn('/login'), upload.single('photo'), (req, res, next) => {
+// EDIT
+router.get('/:id/edit', ensureLoggedIn('/login'), upload.single('photo'),authorizeExchange, checkOwnership,(req, res, next) => {
   Exchange.findById(req.params.id, (err, exchange) => {
     if (err)       { return next(err) }
     if (!exchange) { return next(new Error("404")) }
@@ -50,7 +56,7 @@ router.get('/:id/edit', ensureLoggedIn('/login'), upload.single('photo'), (req, 
   });
 });
 
-router.post('/exchange/:id', ensureLoggedIn('/login'), upload.single('photo'),(req, res, next) => {
+router.post('/exchange/:id', ensureLoggedIn('/login'), upload.single('photo'),authorizeExchange,(req, res, next) => {
   const updateexchange = {
 
     description: req.body.description,

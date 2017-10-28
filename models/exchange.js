@@ -44,6 +44,10 @@ exchangeSchema.virtual('inputFormattedDate').get(function(){
   return moment(this.dateofexchange).format('YYYY-MM-DD');
 });
 
+exchangeSchema.methods.belongsTo = function(user){
+  return this._exchangeuserid.equals(user._id);
+}
+
 
 
 const Exchange = mongoose.model('Exchange', exchangeSchema);
