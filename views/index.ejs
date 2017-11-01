@@ -3,5 +3,7 @@
   <div class="jumbotron text-center">
 <h1 class="display-3">Welcome to Bartr</h1>
 <p class="lead">Exchange services and goods for other goods and services with people in your community</p>
+<% if (typeof user !== 'undefined') { %>
 <a href="/exchange" class="btn btn-dark btn-lg">Add an Exchange</a>
+   <% } %>
 </div>
