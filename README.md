@@ -8,3 +8,5 @@ This app is designed to help the local community exchange goods and services for
 
 
 Created using Node.js, Express and MongoDB.
+
+Live demo: https://bartrapplication.herokuapp.com
