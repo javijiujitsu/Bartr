@@ -1,9 +1,19 @@
+<!--Jumbotron-->
+<div class="jumbotron text-center mdb-color lighten-2 white-text z-depth-2">
 
-<div class="container">
-  <div class="jumbotron text-center">
-<h1 class="display-3">Welcome to Bartr</h1>
-<p class="lead">Exchange services and goods for other goods and services with people in your community</p>
-<% if (typeof user !== 'undefined') { %>
-<a href="/exchange" class="btn btn-dark btn-lg">Add an Exchange</a>
+    <!--Title-->
+    <h1 class="card-title h2-responsive mt-2 font-bold"><strong>Welcome To Bartr</strong></h1>
+    <!--Subtitle-->
+    <p class="mt-4"><strong>Exchange Goods and Services With People In Your Community</strong></p>
+
+    <!--Text-->
+    <div class="d-flex justify-content-center">
+        <p class="card-text my-2" style="max-width: 43rem;">exchange (goods or services) for other goods or services without using money.
+        </p>
+    </div>
+    <% if (typeof user !== 'undefined') { %>
+    <hr class="my-4 rgba-white-light">
+    <a href="/exchange" class="btn btn-outline-white">Create An Exchange <i class="fa fa-diamond ml-1"></i></button>
    <% } %>
 </div>
+<!--Jumbotron-->
